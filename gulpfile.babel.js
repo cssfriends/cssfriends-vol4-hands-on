@@ -28,10 +28,6 @@ const config = {
       ]
     },
     html: {
-      src: [
-        `${baseConfig.sourceDir}html/!(_)*.html`,
-        `${baseConfig.sourceDir}html/**/!(_)*.html`
-      ],
       watch: [
         `${baseConfig.sourceDir}html/**/*.html`
       ]
@@ -50,23 +46,6 @@ const config = {
 
 gulp.task('browser-sync', () => {
   browserSync.init(config.tasks.browserSync)
-})
-
-gulp.task('html', () => {
-  gulp.src(config.tasks.html.src)
-    .pipe(plumber({
-      handleError: function (err) {
-        log(err)
-        this.emit('end')
-      }
-    }))
-    .pipe(gulp.dest('./dist/'))
-})
-
-gulp.task('html:watch', () => {
-  return watch(config.tasks.html.watch, () => {
-    return gulp.start(['html'])
-  })
 })
 
 gulp.task('scss', () => {
@@ -88,6 +67,6 @@ gulp.task('scss:watch', () => {
   })
 })
 
-gulp.task('watch', ['html:watch', 'scss:watch'])
+gulp.task('watch', ['scss:watch'])
 
 gulp.task('default', ['browser-sync', 'watch'])
