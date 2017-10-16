@@ -1,4 +1,6 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./vender/bootstrap/bootstrap.scss";
+
 .row>.col,
 .row>[class^=col-] {
   padding-top: .75rem;
