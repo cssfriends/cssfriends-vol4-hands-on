@@ -1,1 +1,9 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./vender/bootstrap/bootstrap.scss";
+body {
+  background-color: #000;
+  color: #FFF;
+}
+.lead {
+  color: #01d9ff;
+}
