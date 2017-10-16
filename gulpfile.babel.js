@@ -27,11 +27,6 @@ const config = {
         `${baseConfig.publishDir}*.css`
       ]
     },
-    html: {
-      watch: [
-        `${baseConfig.sourceDir}html/**/*.html`
-      ]
-    },
     css: {
       src: [
         `${baseConfig.sourceDir}scss/!(_)*.scss`,
